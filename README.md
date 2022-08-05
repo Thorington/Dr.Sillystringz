@@ -1,5 +1,5 @@
 # Independent Project #10: Dr. Sillystringz's Factory
-![a picture of the factory's header](Factory/wwwroot/img/header2.jpg)
+![a picture of the factory's header](Factory/wwwroot/img/header3.jpg)
 
 #### Contributors: _**Claire Thorington**_
 
