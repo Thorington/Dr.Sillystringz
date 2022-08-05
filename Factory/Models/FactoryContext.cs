@@ -1,16 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjectName.Models
+namespace Factory.Models
 {
-  public class ProjectNameContext : DbContext
+  public class FactoryContext : DbContext
   {
-    public DbSet<Category> Categories { get; set; }
+    public DbSet<Engineer> Engineers { get; set; }
 
-    public DbSet<Item> Items { get; set; }
+    public DbSet<Machine> Machines { get; set; }
 
-    public DbSet<CategoryItem> CategoryItem { get; set; }
+    public DbSet<EngineerMachine> EngineerMachine { get; set; }
 
-    public ProjectNameContext(DbContextOptions options) :
+    public FactoryContext(DbContextOptions options) :
         base(options)
     {
     }

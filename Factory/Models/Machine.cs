@@ -1,21 +1,19 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProjectName.Models
+namespace Factory.Models
 {
-  public class Item
+  public class Machine
   {
-    public Item()
+    public Machine()
     {
-      this.JoinEntities = new HashSet<CategoryItem>();
+      this.JoinEntities = new HashSet<EngineerMachine>();
     }
 
-    public int ItemId { get; set; }
+    public int MachineId { get; set; }
 
-    public string Description { get; set; }
+    public string Name { get; set; }
 
-    public DateTime Birthdate { get; set; }
-
-    public virtual ICollection<CategoryItem> JoinEntities { get; }
+    public virtual ICollection<EngineerMachine> JoinEntities { get; }
   }
 }

@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ProjectName.Models;
+using Factory.Models;
 
-namespace ProjectName
+namespace Factory
 {
   public class Startup
   {
@@ -27,7 +27,7 @@ namespace ProjectName
 
       services
           .AddEntityFrameworkMySql()
-          .AddDbContext<ProjectNameContext>(options =>
+          .AddDbContext<FactoryContext>(options =>
               options
                   .UseMySql(Configuration["ConnectionStrings:DefaultConnection"],
                   ServerVersion
@@ -52,7 +52,7 @@ namespace ProjectName
       app
           .Run(async (context) =>
           {
-            await context.Response.WriteAsync("Hello World!");
+            await context.Response.WriteAsync("Oops, sorry!");
           });
     }
   }

@@ -4,22 +4,22 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ProjectName.Models;
+using Factory.Models;
 
-namespace ProjectName.Controllers
+namespace Factory.Controllers
 {
-  public class CategoriesController : Controller
+  public class EngineersController : Controller
   {
-    private readonly ProjectNameContext _db;
+    private readonly FactoryContext _db;
 
-    public CategoriesController(ProjectNameContext db)
+    public EngineersController(FactoryContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Category> model = _db.Categories.ToList();
+      List<Engineer> model = _db.Engineers.ToList();
       return View(model);
     }
 
@@ -29,67 +29,67 @@ namespace ProjectName.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Category category)
+    public ActionResult Create(Engineer engineer)
     {
-      _db.Categories.Add(category);
+      _db.Engineers.Add(engineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      var thisCategory = _db.Categories.Include(category => category.JoinEntities).ThenInclude(join => join.Item).FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisEngineer = _db.Engineers.Include(engineer => engineer.JoinEntities).ThenInclude(join => join.Machine).FirstOrDefault(engineer => engineer.EngineerId == id);
+      return View(thisEngineer);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      ViewBag.ItemId = new SelectList(_db.Items, "ItemId", "Description");
-      return View(thisCategory);
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Description");
+      return View(thisEngineer);
     }
 
     [HttpPost]
-    public ActionResult Edit(Category category, int ItemId)
+    public ActionResult Edit(Engineer engineer, int MachineId)
     {
-      if (ItemId != 0 && _db.CategoryItem.FirstOrDefault(_d => _d.ItemId == ItemId && _d.CategoryId == category.CategoryId) == null)
+      if (MachineId != 0 && _db.EngineerMachine.FirstOrDefault(_d => _d.MachineId == MachineId && _d.EngineerId == engineer.EngineerId) == null)
       {
         _db
-            .CategoryItem
-            .Add(new CategoryItem
-            { ItemId = ItemId, CategoryId = category.CategoryId });
+            .EngineerMachine
+            .Add(new EngineerMachine
+            { MachineId = MachineId, EngineerId = engineer.EngineerId });
         _db.SaveChanges();
       }
 
-      _db.Entry(category).State = EntityState.Modified;
+      _db.Entry(engineer).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
     // [HttpPost]
-    // public ActionResult Edit(Category category)
+    // public ActionResult Edit(Engineer engineer)
     // {
-    //   _db.Entry(category).State = EntityState.Modified;
+    //   _db.Entry(engineer).State = EntityState.Modified;
     //   _db.SaveChanges();
     //   return RedirectToAction("Index");
     // }
 
-    public ActionResult AddItem(int id)
+    public ActionResult AddMachine(int id)
     {
-      var thisCategory =
-          _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      ViewBag.ItemId = new SelectList(_db.Items, "ItemId", "Description");
-      return View(thisCategory);
+      var thisEngineer =
+          _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Description");
+      return View(thisEngineer);
     }
 
     [HttpPost]
-    public ActionResult AddItem(Category category, int ItemId)
+    public ActionResult AddMachine(Engineer engineer, int MachineId)
     {
-      if (ItemId != 0)
+      if (MachineId != 0)
       {
         _db
-            .CategoryItem
-            .Add(new CategoryItem()
-            { ItemId = ItemId, CategoryId = category.CategoryId });
+            .EngineerMachine
+            .Add(new EngineerMachine()
+            { MachineId = MachineId, EngineerId = engineer.EngineerId });
         _db.SaveChanges();
       }
       return RedirectToAction("Index");
@@ -97,17 +97,17 @@ namespace ProjectName.Controllers
 
     public ActionResult Delete(int id)
     {
-      var thisCategory =
-          _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisEngineer =
+          _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      return View(thisEngineer);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisCategory =
-          _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      _db.Categories.Remove(thisCategory);
+      var thisEngineer =
+          _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      _db.Engineers.Remove(thisEngineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

@@ -2,22 +2,24 @@
   Layout = "_Layout";
 }
 
-@model ProjectName.Models.Category
+@model Factory.Models.Engineer
 
 <h2>Edit</h2>
 
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
+<h4>@Html.DisplayFor(model => model.Name)</h4>
+<br>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.CategoryId)
+  @Html.HiddenFor(model => model.EngineerId)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
+  <p>Name: @Html.EditorFor(model => model.Name)</p>
 
-  @Html.Label("Select Item")
-    @Html.DropDownList("ItemId")
-
-  <input type="submit" value="Save" />
+  <p>Machine: @Html.DropDownList("MachineId")</p>
+<br>
+  <input type="submit" value="Save" class="btn" />
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+
+<br>
+<br>
+<p>@Html.ActionLink("⚙️ Back to engineers", "Index")</p>

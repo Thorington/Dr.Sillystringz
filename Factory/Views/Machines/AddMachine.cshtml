@@ -2,21 +2,23 @@
   Layout = "_Layout";
 }
 
-@model ProjectName.Models.Category
+@model Factory.Models.Engineer
 
-<h2>Add a Item</h2>
+<h2>Add a machine</h2>
 
-<h4>Add a item to this category: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Add a machine to this engineer: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.CategoryId)
+    @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.Label("Add item")
-    @Html.DropDownList("ItemId")
+    @Html.Label("Add machine")
+    @Html.DropDownList("MachineId")
 
     <input type="submit" value="Save" />
 }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Add a Item", "AddItem", new { id = Model.CategoryId })</p>
+<br>
+<br>
+<p>@Html.ActionLink("⚙️ Back to machines", "Index")</p>
+<p>@Html.ActionLink("⚙️ Add a machine", "AddMachine", new { id = Model.EngineerId })</p>

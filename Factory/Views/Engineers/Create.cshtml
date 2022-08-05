@@ -2,13 +2,17 @@
   Layout = "_Layout";
 }
 
-@model ProjectName.Models.Category
+@model Factory.Models.Engineer
 
-<h4>Add a new Category</h4>
+<h4>Add a new engineer</h4>
+<br>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Add new category" />
+  <p>Name: @Html.TextBoxFor(model => model.Name)
+  <input type="submit" value="Add" />
+  </p>
 }
-<p>@Html.ActionLink("Show all categories", "Index")</p>
+
+<br>
+<br>
+<p>@Html.ActionLink("⚙️ Show all engineers", "Index")</p>

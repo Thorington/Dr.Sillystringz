@@ -2,23 +2,21 @@
   Layout = "_Layout";
 }
 
-@model ProjectName.Models.Item
+@model Factory.Models.Machine
 
-<h4>Add a new task</h4>
+<h4>Add a new machine</h4>
+<br>
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
+  <p>Name: @Html.TextBoxFor(model => model.Name)</p>
 
-  @Html.LabelFor(m => m.Birthdate)
-  @Html.TextBoxFor(m => m.Birthdate, new {type="date", @class="form-control"})
+  <p>Select engineer: @Html.DropDownList("EngineerId")</p>
 
-
-  @Html.Label("Select category")
-  @Html.DropDownList("CategoryId")
-
-
-  <input type="submit" value="Add new item" class="btn btn-default" />
+<br>
+  <input type="submit" value="Add machine" class="btn btn-default" />
 }
-<p>@Html.ActionLink("Show all items", "Index")</p>
+
+<br>
+<br>
+<p>@Html.ActionLink("⚙️ Show all machines", "Index")</p>
