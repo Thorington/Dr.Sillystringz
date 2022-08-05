@@ -46,6 +46,7 @@ h3 {
   color: rgb(255, 94, 0);
   padding-top: 10px;
   padding-bottom: 10px;
+  font-weight: 700;
 }
 
 a:link {
@@ -80,7 +81,7 @@ body {
 }
 
 main {
-  margin-top: 200px;
+  margin-top: 300px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: left;
