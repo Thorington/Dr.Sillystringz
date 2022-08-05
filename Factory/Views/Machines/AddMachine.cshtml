@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ProjectName.Models.Category
+
+<h2>Add a Item</h2>
+
+<h4>Add a item to this category: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CategoryId)
+
+    @Html.Label("Add item")
+    @Html.DropDownList("ItemId")
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Add a Item", "AddItem", new { id = Model.CategoryId })</p>
