@@ -1,4 +1,4 @@
-# Independent Project #9: Dr. Sillystringz's Factory
+# Independent Project #10: Dr. Sillystringz's Factory
 <!-- ![a picture of the factory's header](Factory/wwwroot/img/header1.jpg) -->
 
 #### Contributors: _**Claire Thorington**_
@@ -18,9 +18,9 @@
 
 ## Description
 
-The home page welcomes Dr. Sillystringz and displays an index of engineers and machines at his factory. He can see a list of engineers working at the factory, and for each engineer, add machines that engineer is licensed to repair. Conversely, if a machine is viewed, it has a list of engineers who are licensed to repair that machine. He should be able to add and remove both the machine or the engineer from any entry.
+The home page welcomes Dr. Sillystringz and displays an index of engineers and machines at his factory. He can see a list of engineers working at the factory, and for each engineer, add machines that engineer is licensed to repair. Conversely, if a machine is viewed, it has a list of engineers who are licensed to repair that machine. He should be able to add and remove both the machine and the engineer from any entry.
 
-<!-- ![a picture of the program's schema](Factory/wwwroot/img/schema.jpg) -->
+![a picture of the program's schema](Factory/wwwroot/img/schema1.png)
 
 ## Setup/Installation Requirements
 
