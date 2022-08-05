@@ -8,11 +8,14 @@
 <br>
 @using (Html.BeginForm())
 {
-  <p>Name: @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Add" />
+  <p>
+  Name: @Html.TextBoxFor(model => model.Name)
+  Machine: @Html.DropDownList("MachineId")
   </p>
+  <input type="submit" value="Add" class="btn"/>
+  
 }
 
 <br>
 <br>
-<p>@Html.ActionLink("⚙️ Show all engineers", "Index")</p>
+<p>@Html.ActionLink("⚙️ Back to engineers", "Index")</p>

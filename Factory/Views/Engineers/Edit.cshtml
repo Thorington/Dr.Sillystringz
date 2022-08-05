@@ -4,22 +4,20 @@
 
 @model Factory.Models.Engineer
 
-<h2>Edit</h2>
-
-<h4>Edit @Html.DisplayFor(model => model.Name)</h4>
+<h2>Edit @Html.DisplayFor(model => model.Name)</h2>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.EngineerId)
-
-    @Html.LabelFor(model => model.Name)
+    <p> 
+    Name: 
     @Html.EditorFor(model => model.Name)
-
-    @* @Html.Label("Select machine")
-    @Html.DropDownList("MachineId") *@
-
-    <input type="submit" value="Save" />
+    Machine:
+    @Html.DropDownList("MachineId")
+    </p>
+    <input type="submit" value="Save" class="btn" />
 }
+
 
 <br>
 <br>
