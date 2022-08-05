@@ -6,18 +6,19 @@
 
 <h2>Edit</h2>
 
-<h4>@Html.DisplayFor(model => model.Name)</h4>
-<br>
+<h4>Edit @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.EngineerId)
+    @Html.HiddenFor(model => model.EngineerId)
 
-  <p>Name: @Html.EditorFor(model => model.Name)</p>
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
 
-  <p>Machine: @Html.DropDownList("MachineId")</p>
-<br>
-  <input type="submit" value="Save" class="btn" />
+    @* @Html.Label("Select machine")
+    @Html.DropDownList("MachineId") *@
+
+    <input type="submit" value="Save" />
 }
 
 <br>

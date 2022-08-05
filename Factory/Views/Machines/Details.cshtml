@@ -10,11 +10,11 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This machine does not belong to any engineers</p>
+  <p>@Html.DisplayFor(model => model.Name) is not repaired by any engineers</p>
 }
 else
 {
-  <h4>Engineer(s) the machine is repaired by:</h4>
+  <h4>Repaired by:</h4>
   <br>
   <ul>
   @foreach(var join in Model.JoinEntities)

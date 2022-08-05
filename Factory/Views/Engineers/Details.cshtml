@@ -10,11 +10,11 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This engineer doesn't work on any machines</p>
+  <p>@Html.DisplayFor(model => model.Name) isn't licensed to work on any machines</p>
 }
 else
 {
-  <h4>Machines the engineer works on:</h4>
+  <h4>Licensed to repair:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
@@ -27,5 +27,5 @@ else
 <br>
 
 <p>@Html.ActionLink("⚙️ Edit engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("⚙️ Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("⚙️ Delete engineer", "Delete", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("⚙️ Back to engineers", "Index")</p>
