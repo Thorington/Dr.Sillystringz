@@ -1,5 +1,5 @@
 # Independent Project #10: Dr. Sillystringz's Factory
-<!-- ![a picture of the factory's header](Factory/wwwroot/img/header1.jpg) -->
+![a picture of the factory's header](Factory/wwwroot/img/header2.jpg)
 
 #### Contributors: _**Claire Thorington**_
 
@@ -51,4 +51,11 @@ The home page welcomes Dr. Sillystringz and displays an index of engineers and m
 [<a href=LICENSE>MIT</a>]
 
 Copyright (c) _2022_ _Claire Thorington_
+
+Header photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/s/photos/shapes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Body photo by <a href="https://unsplash.com/@tetrakiss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Arseny Togulev</a> on <a href="https://unsplash.com/s/photos/factory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+  
+  
 
