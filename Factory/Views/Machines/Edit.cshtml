@@ -10,7 +10,7 @@
     <p>
     @Html.HiddenFor(model => model.MachineId)
     Name: 
-    @Html.EditorFor(model => model.Name)</p>
+    @Html.EditorFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 300px;"})</p>
     <p>Add engineer:
     @Html.DropDownList("EngineerId")</p>
     <input type="submit" value="Save" class="btn" />

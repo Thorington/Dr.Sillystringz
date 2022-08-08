@@ -8,8 +8,9 @@
 <br>
 @using (Html.BeginForm())
 {
-  <p>Name: @Html.TextBoxFor(model => model.Name)</p>
-  <p>Engineer: @Html.DropDownList("EngineerId")</p>
+  <p>Name: @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 300px;"})
+  <br>
+  Engineer: @Html.DropDownList("EngineerId")</p>
 <br>
   <input type="submit" value="Add machine" class="btn btn-default" />
 }

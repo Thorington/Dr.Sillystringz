@@ -5,7 +5,7 @@
 @model Factory.Models.Machine
 
 <h2>Add a engineer</h2>
-<h4>Add an engineer to this machine: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Add an engineer to this machine: @Html.DisplayFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 300px;"})</h4>
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)

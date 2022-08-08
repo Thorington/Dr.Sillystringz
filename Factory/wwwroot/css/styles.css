@@ -108,4 +108,9 @@ dl {
   font-family: 'IBM Plex Mono', monospace;
 }
 
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
 
