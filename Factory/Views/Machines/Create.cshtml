@@ -6,17 +6,13 @@
 
 <h4>Add a new machine</h4>
 <br>
-
 @using (Html.BeginForm())
 {
   <p>Name: @Html.TextBoxFor(model => model.Name)</p>
-
   <p>Engineer: @Html.DropDownList("EngineerId")</p>
-
 <br>
   <input type="submit" value="Add machine" class="btn btn-default" />
 }
-
 <br>
 <br>
 <p>@Html.ActionLink("⚙️ Show all machines", "Index")</p>

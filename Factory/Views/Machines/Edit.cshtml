@@ -5,33 +5,29 @@
 @model Factory.Models.Machine
 
 <h2>Edit @Html.DisplayFor(model => model.Name)</h2>
-<br>
-<h3>Name</h3>
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.MachineId)
     <p>
+    @Html.HiddenFor(model => model.MachineId)
     Name: 
-    @Html.EditorFor(model => model.Name)
-
-    Add engineer:
-    @Html.DropDownList("EngineerId")
+    @Html.EditorFor(model => model.Name)</p>
+    <p>Add engineer:
+    @Html.DropDownList("EngineerId")</p>
     <input type="submit" value="Save" class="btn" />
-    </p>
+}
 <br>
 <h3>Manage engineers</h3>
     @foreach(var join in Model.JoinEntities)
-  {
-    <li>
-      @join.Engineer.Name
-      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+    {
+      <dl>
+      <dt>@join.Engineer.Name
+      <dd>@using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
-      @Html.Hidden("joinId", @join.EngineerMachineId) 
-      <input type="submit" value="Delete" class="btn"/>
-      }
-    </li>
-  }
-}
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="Delete" class="btn"/>
+      }</dd>
+      </dl>
+    }
 <br>
 <br>
 <p>@Html.ActionLink("⚙️ Back to machines", "Index")</p>

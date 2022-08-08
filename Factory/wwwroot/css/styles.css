@@ -94,16 +94,18 @@ main {
   border-radius: 5px;
   border-color:rgb(215, 235, 242);
   border-style: solid;
-  border-width: 10px;
+  border-width: 20px;
 }
 
 .btn {
   background:rgb(255, 94, 0);
   border-radius: 5px;
   color: rgb(255, 255, 255);
-  border-color:rgb(255, 255, 255);
-  border-style: double;
-  border-width: 1px;
+}
+
+dl {
+  font-size: medium;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 

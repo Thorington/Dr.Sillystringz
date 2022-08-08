@@ -5,12 +5,10 @@
 @model Factory.Models.Engineer
 
 <h2>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h2>
-
 @using (Html.BeginForm())
 {
   <input type="submit" value="Delete" class="btn" />
 }
-
 <br>
 <br>
 @Html.ActionLink("⚙️ Back to engineers", "Index")
